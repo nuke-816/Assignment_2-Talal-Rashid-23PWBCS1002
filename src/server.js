@@ -58,7 +58,7 @@ app.get('/signin', (req, res) => {
 });
 
 // POST /api/signup
-app.post('https://vercel.com/talal-rashids-projects/assignment-2-talal-rashid-23-pwbcs-1002/api/signup', async (req, res) => {
+app.post('https://assignment-2-talal-rashid-23-pwbcs-1002.vercel.app/api/signup', async (req, res) => {
     const { username, email, password } = req.body;
 
     // Check if the user already exists
@@ -85,7 +85,7 @@ app.post('https://vercel.com/talal-rashids-projects/assignment-2-talal-rashid-23
 });
 
 // POST /api/signin
-app.post('https://vercel.com/talal-rashids-projects/assignment-2-talal-rashid-23-pwbcs-1002/api/signin', async (req, res) => {
+app.post('https://assignment-2-talal-rashid-23-pwbcs-1002.vercel.app/api/signin', async (req, res) => {
     const { username, password } = req.body;
 
     const user = await User.findOne({ name: username });
@@ -126,7 +126,7 @@ const verifyToken = (req, res, next) => {
 };
 
 // GET /api/protected
-app.get('https://vercel.com/talal-rashids-projects/assignment-2-talal-rashid-23-pwbcs-1002/api/protected', verifyToken, (req, res) => {
+app.get('https://assignment-2-talal-rashid-23-pwbcs-1002.vercel.app/api/protected', verifyToken, (req, res) => {
     res.status(200).json({ message: 'Protected route accessed', user: req.user });
 });
 
