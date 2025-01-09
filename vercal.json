@@ -1,5 +1,15 @@
 {
- "rewrites" : [
-  { "source": "/(.*)", "destination": "/"}
- ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js", // Change this to your main server file
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ]
 }
